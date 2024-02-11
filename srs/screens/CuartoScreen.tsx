@@ -8,7 +8,7 @@ export const CuartoScreen = () => {
   const [numeros, setNumeros] = useState({ numero1: '', numero2: '' });
   const [resultado, setResultado] = useState('');
 
-  const handleChange = (name: string, value: string) => {
+  const declaracion = (name: string, value: string) => {
     setNumeros({ ...numeros, [name]: value });
   };
 
@@ -26,8 +26,8 @@ export const CuartoScreen = () => {
     <BodyComponent> 
       <View >
       <TittleReutilizable title="Formulario"/>
-        <InputComponent onChangeText={(text) => handleChange('numero1', text)} placeholder="Ingrese el primer número" />
-        <InputComponent onChangeText={(text) => handleChange('numero2', text)} placeholder="Ingrese el segundo número" />
+        <InputComponent onChangeText={(text) => declaracion('numero1', text)} placeholder="Ingrese el primer número" />
+        <InputComponent onChangeText={(text) => declaracion('numero2', text)} placeholder="Ingrese el segundo número" />
         <Button title=">=" onPress={Comparacion} />
         <Text style={styles.resultado}>{resultado}</Text>
       </View>

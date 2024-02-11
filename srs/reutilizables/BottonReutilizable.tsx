@@ -8,21 +8,21 @@ interface ButtonProps{
 
 export const BottonReutilizable = ({title, onPress}:ButtonProps) => {
   return (
-    <TouchableOpacity style={styles.buttonContainer}
+    <TouchableOpacity style={styles.ContenedorBotton}
         onPress={onPress}>
-        <Text style={styles.buttonText}>{title}</Text>
+        <Text style={styles.colorBotton}>{title}</Text>
     </TouchableOpacity>
   )
 }
 
 const styles=StyleSheet.create({
-    buttonContainer:{
+    ContenedorBotton:{
         backgroundColor:'#007AFF',
         padding: 10,
         marginHorizontal: 10,
         borderRadius: 5
     },
-    buttonText:{
+    colorBotton:{
         textAlign:'center',
         color: 'white',
         fontSize: 16,

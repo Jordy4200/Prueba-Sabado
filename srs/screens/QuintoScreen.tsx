@@ -8,11 +8,11 @@ export const QuintoScreen = () => {
   const [numeros, setNumeros] = useState({ numero1: '', numero2: '' });
   const [resultado, setResultado] = useState('');
 
-  const handleChange = (name: string, value: string) => {
+  const declaracion = (name: string, value: string) => {
     setNumeros({ ...numeros, [name]: value });
   };
 
-  const handleComparacion = () => {
+  const Comparacion = () => {
     const { numero1, numero2 } = numeros;
     const num1 = parseFloat(numero1);
     const num2 = parseFloat(numero2);
@@ -26,14 +26,14 @@ export const QuintoScreen = () => {
       <View >
         <TittleReutilizable title="Formulario"/>
         <InputComponent
-          onChangeText={(text) => handleChange('numero1', text)}
+          onChangeText={(text) => declaracion('numero1', text)}
           placeholder="Ingrese el primer número"
         />
         <InputComponent
-          onChangeText={(text) => handleChange('numero2', text)}
+          onChangeText={(text) => declaracion('numero2', text)}
           placeholder="Ingrese el segundo número"
         />
-        <Button title="<=" onPress={handleComparacion} />
+        <Button title="<=" onPress={Comparacion} />
         <Text style={styles.resultado}>{resultado}</Text>
       </View>
     </BodyComponent> 

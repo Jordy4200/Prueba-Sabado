@@ -9,7 +9,7 @@ interface InputProps {
 export const InputComponent = ({ onChangeText, placeholder }: InputProps) => {
   const [isEmpty, setIsEmpty] = useState(false);
 
-  const handleTextChange = (text: string) => {
+  const validacion = (text: string) => {
     onChangeText(text);
     if (text.trim() === '') {
       setIsEmpty(true);
@@ -23,10 +23,10 @@ export const InputComponent = ({ onChangeText, placeholder }: InputProps) => {
       <TextInput
         placeholder={placeholder} 
         keyboardType="numeric"
-        style={styles.input}
-        onChangeText={handleTextChange}
+        style={styles.cuadro}
+        onChangeText={validacion}
       />
-      {isEmpty && <Text style={styles.validation}>Por favor, complete este campo.</Text>}
+      {isEmpty && <Text style={styles.validacion2}>Completa el campo</Text>}
     </View>
   );
 };
@@ -35,12 +35,12 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 20,
   },
-  input: {
+  cuadro: {
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: '#2F2BA6',
     padding: 10,
   },
-  validation: {
+  validacion2: {
     color: 'red',
   },
 });
