@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { InputComponent } from '../reutilizables/InputComponent';
 import { BodyComponent } from '../reutilizables/BodyComponent'; 
+import { TittleReutilizable } from '../reutilizables/TittleReutilizable';
 
 export const QuintoScreen = () => {
   const [numeros, setNumeros] = useState({ numero1: '', numero2: '' });
@@ -22,8 +23,8 @@ export const QuintoScreen = () => {
 
   return (
     <BodyComponent> 
-      <View style={styles.container}>
-        <Text style={styles.title}>Formulario</Text>
+      <View >
+        <TittleReutilizable title="Formulario"/>
         <InputComponent
           onChangeText={(text) => handleChange('numero1', text)}
           placeholder="Ingrese el primer número"
@@ -45,11 +46,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20,
   },
   resultado: {
     marginTop: 20,

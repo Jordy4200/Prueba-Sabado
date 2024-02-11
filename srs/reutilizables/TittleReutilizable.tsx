@@ -17,7 +17,7 @@ export const TittleReutilizable = ({title}:TitleProps) => {
   
   const styles=StyleSheet.create({
       title:{
-          color:'#151B54',
+          color:'#73210F',
           fontSize:27,
           fontWeight:'bold',
           paddingHorizontal:30,

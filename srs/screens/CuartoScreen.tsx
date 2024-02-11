@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { InputComponent } from '../reutilizables/InputComponent';
 import { BodyComponent } from '../reutilizables/BodyComponent';
+import { TittleReutilizable } from '../reutilizables/TittleReutilizable';
 
 export const CuartoScreen = () => {
   const [numeros, setNumeros] = useState({ numero1: '', numero2: '' });
@@ -24,7 +25,7 @@ export const CuartoScreen = () => {
   return (
     <BodyComponent> 
       <View >
-        <Text style={styles.titles}>Formulario</Text>
+      <TittleReutilizable title="Formulario"/>
         <InputComponent onChangeText={(text) => handleChange('numero1', text)} placeholder="Ingrese el primer número" />
         <InputComponent onChangeText={(text) => handleChange('numero2', text)} placeholder="Ingrese el segundo número" />
         <Button title=">=" onPress={Comparacion} />
@@ -40,12 +41,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-  },
-  titles: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    textAlign:'center'
   },
   resultado: {
     marginTop: 20,
