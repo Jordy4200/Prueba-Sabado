@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { InputComponent } from '../reutilizables/InputComponent';
+import { BodyComponent } from '../reutilizables/BodyComponent'; 
 
 export const QuintoScreen = () => {
   const [numeros, setNumeros] = useState({ numero1: '', numero2: '' });
@@ -20,19 +21,21 @@ export const QuintoScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Formulario</Text>
-      <InputComponent
-        onChangeText={(text) => handleChange('numero1', text)}
-        placeholder="Ingrese el primer número"
-      />
-      <InputComponent
-        onChangeText={(text) => handleChange('numero2', text)}
-        placeholder="Ingrese el segundo número"
-      />
-      <Button title="<=" onPress={handleComparacion} />
-      <Text style={styles.resultado}>{resultado}</Text>
-    </View>
+    <BodyComponent> 
+      <View style={styles.container}>
+        <Text style={styles.title}>Formulario</Text>
+        <InputComponent
+          onChangeText={(text) => handleChange('numero1', text)}
+          placeholder="Ingrese el primer número"
+        />
+        <InputComponent
+          onChangeText={(text) => handleChange('numero2', text)}
+          placeholder="Ingrese el segundo número"
+        />
+        <Button title="<=" onPress={handleComparacion} />
+        <Text style={styles.resultado}>{resultado}</Text>
+      </View>
+    </BodyComponent> 
   );
 };
 

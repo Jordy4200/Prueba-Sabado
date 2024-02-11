@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
 interface InputProps {
@@ -7,17 +7,27 @@ interface InputProps {
 }
 
 export const InputComponent = ({ onChangeText, placeholder }: InputProps) => {
+  const [isEmpty, setIsEmpty] = useState(false);
+
+  const handleTextChange = (text: string) => {
+    onChangeText(text);
+    if (text.trim() === '') {
+      setIsEmpty(true);
+    } else {
+      setIsEmpty(false);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <TextInput
         placeholder={placeholder} 
         keyboardType="numeric"
         style={styles.input}
-        onChangeText={onChangeText}
+        onChangeText={handleTextChange}
       />
-      <Text style={styles.validacion}>Por favor, complete este campo.</Text>
+      {isEmpty && <Text style={styles.validation}>Por favor, complete este campo.</Text>}
     </View>
-    //Inge no me desvance el campo de validacion :'v
   );
 };
 
@@ -30,7 +40,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     padding: 10,
   },
-  validacion: {
+  validation: {
     color: 'red',
   },
 });

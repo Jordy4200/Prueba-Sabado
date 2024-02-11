@@ -16,7 +16,11 @@ export const BodyComponent = (props:any) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
     backgroundColor:'grey',
-    paddingTop: 40
+    textAlign:'center'
   }
 });

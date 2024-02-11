@@ -1,16 +1,17 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { BodyComponent } from '../reutilizables/BodyComponent';
+import { TittleReutilizable } from '../reutilizables/TittleReutilizable';
 
 export const TerceroScreen = () => {
   return (
     <BodyComponent> 
       <View style={styles.container}>
         <Image 
-          source={{ uri: 'https://e1.pxfuel.com/desktop-wallpaper/41/479/desktop-wallpaper-doom-eternal-game-2020-ultra-mobile-doom-cellphone.jpg' }} // URL de la imagen
-          style={styles.image} // Estilo para la imagen
+          source={{ uri: 'https://e1.pxfuel.com/desktop-wallpaper/41/479/desktop-wallpaper-doom-eternal-game-2020-ultra-mobile-doom-cellphone.jpg' }} 
+          style={styles.imagen}
         />
-        <Text>Doom Eternal</Text>
+        <TittleReutilizable title="Doom eternal"/>
       </View>
     </BodyComponent>
   );
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  image: {
+  imagen: {
     width: 300,
     height: 500,
     marginBottom: 20

@@ -2,13 +2,14 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { BodyComponent } from '../reutilizables/BodyComponent';
 import { BottonReutilizable } from '../reutilizables/BottonReutilizable'; 
+import { TittleReutilizable } from '../reutilizables/TittleReutilizable';
 
 export const MainScreen = ({ navigation }: any) => {
 
   return (
     <BodyComponent>
       <View style={styles.container}>
-        <Text style={styles.title}>BIENVENIDO!</Text>
+        <TittleReutilizable title="BIENVENIDO!"/>
         <View style={styles.buttonRow}>
           <BottonReutilizable
             title="Imagen 1"
